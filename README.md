@@ -45,18 +45,14 @@ pytest>=8.0
 
 ```powershell
 cd Mecor_assigment
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install pytest>=8.0
 ```
 
 ### macOS/Linux
 
 ```bash
 cd Mecor_assigment
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install pytest>=8.0
 ```
 
 ## Running tests (single command)
@@ -64,7 +60,7 @@ pip install -r requirements.txt
 From repo root:
 
 ```bash
-pytest -q
+pytest -q tests
 ```
 
 If you prefer path-style imports instead of the package:
@@ -79,24 +75,8 @@ $env:PYTHONPATH="source"; pytest -q
 export PYTHONPATH=source; pytest -q
 ```
 
-## Quick sanity check
 
-```bash
-python - <<'PY'
-from source.referral_network import ReferralNetwork
-g = ReferralNetwork()
-g.add_referral("A", "B")
-g.add_referral("A", "C")
-g.add_referral("B", "D")
-g.add_referral("C", "E")
-print("direct(A)=", g.get_direct_referrals("A"))    # ['B','C']
-print("reach(A)=", g.reach_count("A"))              # 4
-print("top2=", g.top_k_referrers_by_reach(2))       # [('A',4), ('B',1)] (example)
-print("flow=", g.flow_centrality()[:3])             # e.g., [('C',4), ('B',3), ...] depending on graph
-PY
-```
-
-## Design choices (concise)
+## Design choices
 
 * **Graph model**: Directed acyclic forest (unique parent per node).
   `children: Dict[str, Set[str]]`, `parent: Dict[str, str]`, `nodes: Set[str]`.
@@ -126,11 +106,6 @@ PY
 * Simulation caps per-referrer successes at 10 and does not promote new referrers.
 * `adoption_prob` is monotone non-decreasing in \[0,1].
 
-## Submission
-
-* Private GitHub repo, share with the specified reviewer email.
-* Include this README and tests; a single `pytest -q` must work from repo root.
-
 ## Acknowledgment (optional)
 
-AI assistance used for scaffolding and documentation.
+Used it for fixing sytanx error 
