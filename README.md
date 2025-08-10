@@ -44,7 +44,7 @@ pytest>=8.0
 ### Windows (PowerShell)
 
 ```powershell
-cd your-project
+cd Mecor_assigment
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ### macOS/Linux
 
 ```bash
-cd your-project
+cd Mecor_assigment
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
