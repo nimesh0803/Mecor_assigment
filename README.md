@@ -35,8 +35,6 @@ your-project/
 * Python **3.10+**
 * `pytest`
 
-`requirements.txt` (optional):
-
 ```
 pytest>=8.0
 ```
@@ -47,8 +45,6 @@ pytest>=8.0
 
 ```powershell
 cd your-project
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
