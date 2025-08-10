@@ -17,7 +17,6 @@ Implementation of Parts 1–5:
 ```
 your-project/
 ├─ source/
-│  ├─ __init__.py
 │  ├─ referral_network.py     # Parts 1–3: core data structure & metrics
 │  ├─ simulation.py           # Part 4: expected-value simulation
 │  └─ bonus_opt.py            # Part 5: optimization (uses simulation)
@@ -29,7 +28,7 @@ your-project/
    └─ test_part5_bonus_opt.py       # Part 5
 ```
 
-> `bonus_opt.py` imports with `from .simulation import ...`, so keep `source/__init__.py` (can be empty). Tests include a fallback to path-style imports if you prefer `PYTHONPATH=source`.
+
 
 ## Requirements
 
